@@ -1,8 +1,43 @@
-.topFixedBanner{
-  background-image: url('../image/banner.jpg');
+:root {
+  --bg-white-1:#fff;
+}
+
+
+.top__fixedBanner{
+  background-image: url('../image/banner1.jpg');
   min-height: 550px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.top__bannerOverlay{
+  position: absolute;
+  min-height: 550px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.imgWidth{
+  height: 600px;
+  width: 100%;
+}
+
+.top__content{
+  margin-top: 10em;
+}
+
+.top__title{
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  color: var(--bg-white-1);
+  font-size: 48px;
+}
+
+.top__subTitle{
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+  color: var(--bg-white-1);
+  font-size: 22px;
 }
