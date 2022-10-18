@@ -53,6 +53,11 @@
 }
 
 /* Serviceses section */
+.service__title{
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
 .service__img1{
   height: 80px;
   width: 80px;
@@ -63,20 +68,19 @@
   margin: 5px;
   height: 22rem;
   padding: 60px 30px;
-  box-shadow: 0 0 8px 0 rgba(4, 55, 105, 0.2);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
   transition: var(--transition);
-  background-color: var(--bg-inL-1);
+  background-color: var(--bg-outL-2);
   text-align: center;
 }
 
 .service__card:hover{
-  box-shadow: 0 0 16px 0 rgba(4, 55, 105, 0.2);
-  border-color: var(--bg-inD-2);
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.8);
+  border-color: var(--bg-outD-1);
   background-color: transparent;
 }
 
 .service__name{
-  color: var(--bg-outL-2);
   margin-top: 1rem;
   font-family: var(--fontFami-Raleway);
   font-size: 26px;
@@ -89,4 +93,20 @@
   font-family: var(--fontFami-Raleway);
   font-size: 15px;
   font-weight: 700;
+}
+
+.service__title{
+  font-family: var(--fontFami-Montserrat);
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.service__titleBottom{
+  background: var(--bg-outL-2) none repeat scroll 0 0;
+  height: 3px;
+  width: 100px;
+  margin: -1.9rem auto 0;
+  margin-bottom: 3rem;
 }
