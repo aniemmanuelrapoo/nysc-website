@@ -41,3 +41,9 @@
   color: var(--bg-white-1);
   font-size: 22px;
 }
+
+/* Serviceses section */
+.service__img1{
+  height: 80px;
+  width: 80px;
+}
