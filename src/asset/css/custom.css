@@ -1,5 +1,15 @@
 :root {
-  --bg-white-1:#fff;
+  --col-white-1:#fff;
+  --col-dark-1:#000;
+  --bg-inL-1:#ffc316;
+  --bg-inD-2:#ff9216;
+  --bg-outD-1:#ee0031;
+  --bg-outL-2:#ee0047;
+
+  --fontFami-Montserrat:Montserrat, sans-serif;
+  --fontFami-Raleway:Raleway, sans-serif;
+
+  --transition: all 400ms ease;
 }
 
 
@@ -29,16 +39,16 @@
 }
 
 .top__title{
-  font-family: Montserrat, sans-serif;
+  font-family: var(--fontFami-Montserrat);
   font-weight: 700;
-  color: var(--bg-white-1);
+  color: var(--col-white-1);
   font-size: 48px;
 }
 
 .top__subTitle{
-  font-family: Raleway, sans-serif;
+  font-family: var(--fontFami-Raleway);
   font-weight: 600;
-  color: var(--bg-white-1);
+  color: var(--col-white-1);
   font-size: 22px;
 }
 
@@ -46,4 +56,37 @@
 .service__img1{
   height: 80px;
   width: 80px;
+}
+
+.service__card{
+  border: 2px solid transparent;
+  margin: 5px;
+  height: 22rem;
+  padding: 60px 30px;
+  box-shadow: 0 0 8px 0 rgba(4, 55, 105, 0.2);
+  transition: var(--transition);
+  background-color: var(--bg-inL-1);
+  text-align: center;
+}
+
+.service__card:hover{
+  box-shadow: 0 0 16px 0 rgba(4, 55, 105, 0.2);
+  border-color: var(--bg-inD-2);
+  background-color: transparent;
+}
+
+.service__name{
+  color: var(--bg-outL-2);
+  margin-top: 1rem;
+  font-family: var(--fontFami-Raleway);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.service__discription{
+  color: var(--col-dark-1);
+  margin-top: 1rem;
+  font-family: var(--fontFami-Raleway);
+  font-size: 15px;
+  font-weight: 700;
 }
