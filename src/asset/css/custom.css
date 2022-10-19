@@ -165,3 +165,24 @@
   width: 80%;
   justify-content: right;
 }
+
+/* Summary Section */
+.top__fixedBanner1{
+  background-image: url('../image/Top-9-States-That-Pay-Corpers-State-Allowance.webp');
+  min-height: 400px;
+  /* background-attachment: fixed; */
+  background-position: center;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.top__bannerOverlay2{
+  position: absolute;
+  min-height: 400px;
+  width: 100%;
+  background-color: rgb(238, 0, 71, 0.5);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
