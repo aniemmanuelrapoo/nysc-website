@@ -1,10 +1,20 @@
 import * as React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
+import { BarChart, ResponsiveContainer, Bar, XAxis, Tooltip } from 'recharts';
 
 interface IAnalysisProps {
 }
-
+const dataObject = [
+  {Activitie: 'LECTURE', Rating: 70},
+  {Activitie: 'SAED', Rating: 50},
+  {Activitie: 'SPORT', Rating: 85},
+  {Activitie: 'PARADE', Rating: 40},
+  {Activitie: 'FOOD', Rating: 100},
+  {Activitie: 'GAMES', Rating: 80},
+  {Activitie: 'SOCIALS', Rating: 100},
+]
 const Analysis: React.FunctionComponent<IAnalysisProps> = (props) => {
+  const [data] = React.useState(dataObject)
   return (
     <>
       <Container className='text-center'>
@@ -12,7 +22,13 @@ const Analysis: React.FunctionComponent<IAnalysisProps> = (props) => {
         <div className="service__titleBottom"></div>
         <Row>
           <Col lg={6} md={12} sm={12}>
-            <h1>BarChart</h1>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart width={100} height={300} data={data}>
+                <XAxis dataKey="Activitie" />
+                <Tooltip />
+                <Bar dataKey="Rating" fill="#ee0047" />
+              </BarChart>
+            </ResponsiveContainer>
           </Col>
           <Col lg={6} md={12} sm={12}>
             <p className='text-start service__discription'>
