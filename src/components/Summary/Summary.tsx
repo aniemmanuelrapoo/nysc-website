@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 interface ISummaryProps {
 }
@@ -9,18 +9,24 @@ const Summary: React.FunctionComponent<ISummaryProps> = (props) => {
     <>
       <Container className='top__fixedBanner1 p-0' fluid>
       <div className="top__bannerOverlay2">
-        <Container>
-          <Row>
+        <Container className='text-center'>
+          <Row >
             <Col lg={8} md={6} sm={12}>
-              <Row>
+              <Row className='count__section'>
                 <Col>
-                  <h1>One</h1>
+                  <h1 className='count__number'>35000+</h1>
+                  <h4 className='count__title'>Corpers Worldwide</h4>
+                  <hr className='count__line' />
                 </Col>
                 <Col>
-                  <h1>Two</h1>
+                  <h1 className='count__number'>40</h1>
+                  <h4 className='count__title'>CDS Groups</h4>
+                  <hr className='count__line' />
                 </Col>
                 <Col>
-                  <h1>Three</h1>
+                  <h1 className='count__number'>500+</h1>
+                  <h4 className='count__title'>Programs | Awards</h4>
+                  <hr className='count__line' />
                 </Col>
               </Row>
             </Col>
