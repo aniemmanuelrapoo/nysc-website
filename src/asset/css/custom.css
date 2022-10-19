@@ -173,8 +173,6 @@
   background-attachment: fixed;
   background-position: top left;
   width: 100%;
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
 }
 
 .top__bannerOverlay2{
@@ -182,10 +180,6 @@
   min-height: 400px;
   width: 100%;
   background-color: rgb(238, 0, 71, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
 }
 
 .count__number, .count__title{
@@ -207,4 +201,37 @@
   height: 5px;
   margin: auto;
   background-color: var(--col-white-1);
+}
+
+.count__section{
+  margin-top: 20% !important;
+}
+
+.summaery__cardContainer1{
+  background-color: var(--bg-inL-1) !important;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
+  transition: var(--transition);
+  border: 2px solid transparent !important;
+  margin-top: 25%;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.summaery__cardContainer1:hover{
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.8);
+  border-color: var(--bg-inL-1) !important;
+  background-color: rgb(238, 0, 71, 0.8) !important;
+}
+
+.summaery__cardTitle{
+  color: var(--col-dark-1);
+  font-family: var(--fontFami-Montserrat);
+  font-weight: 700 !important;
+  font-size: 15px !important;
+}
+
+.summaery__cardSubTitle{
+  font-family: var(--fontFami-Raleway);
+  font-weight: 600;
+  font-size: 14px;
 }

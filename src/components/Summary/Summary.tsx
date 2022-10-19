@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Card } from 'react-bootstrap';
 
 interface ISummaryProps {
 }
@@ -31,7 +31,17 @@ const Summary: React.FunctionComponent<ISummaryProps> = (props) => {
               </Row>
             </Col>
             <Col lg={4} md={6} sm={12}>
-              <h1>Four</h1>
+              <Card className='summaery__cardContainer1'>
+                <Card.Body>
+                  <Card.Title className='summaery__cardTitle'>What Nysc Have Achieved</Card.Title>
+                  <Card.Text>
+                   <p className='summaery__cardSubTitle'>Youth Empowerment</p>
+                   <p className='summaery__cardSubTitle'>Employment</p>
+                   <p className='summaery__cardSubTitle'>Opputunity</p>
+                   <p className='summaery__cardSubTitle'>Religon Unity</p>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             </Col>
           </Row>
         </Container>
