@@ -29,12 +29,12 @@ const TopNavigation: React.FunctionComponent<ITopNavigationProps> = (props) => {
     <>
       <Navbar collapseOnSelect fixed="top" expand="lg" className={navBackground}>
       <Container>
-        <Navbar.Brand href="#home" className={navBarTitle}> {navBarTitle === 'nav__titleScroll' ? <img src={ServiconLogo} alt='' width='10%' /> : <img src={NyscLogo} alt='' width='8%' />} NYSC IN CAMP ACTIVITIES</Navbar.Brand>
+        <Navbar.Brand href="#home" className={`${navBarTitle} nav__sideOne`}> {navBarTitle === 'nav__titleScroll' ? <img src={ServiconLogo} alt='' width='20%' /> : <img src={NyscLogo} alt='' width='15%' />} NYSC CAMP ACTIVITIES</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
           </Nav>
-          <Nav>
+          <Nav className='nav__sideTwo'>
             <Nav.Link href="#deets" className='nav__list'>HOME</Nav.Link>
             <Nav.Link href="#deets" className='nav__list'>ABOUT</Nav.Link>
             <NavDropdown title="ACTIVITIES" id="collasible-nav-dropdown">

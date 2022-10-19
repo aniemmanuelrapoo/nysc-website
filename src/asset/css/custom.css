@@ -138,9 +138,19 @@
   transition: background-color 400ms linear;
 }
 
-.nav__list{
+.nav__list, #collasible-nav-dropdown{
+  /* text-decoration: none !important; */
   color: var(--col-white-1) !important;
+  font-family: var(--fontFami-Montserrat);
+  font-size: 15px !important;
+  font-weight: 700 !important;
 }
-#collasible-nav-dropdown{
-  color: var(--col-white-1);
+
+.nav__sideOne{
+  width: 20%;
+}
+
+.nav__sideTwo{
+  width: 80%;
+  justify-content: right;
 }
