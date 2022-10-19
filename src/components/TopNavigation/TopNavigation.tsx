@@ -8,13 +8,16 @@ interface ITopNavigationProps {
 
 const TopNavigation: React.FunctionComponent<ITopNavigationProps> = (props) => {
   const [navBarTitle, setNavBarTitle] = React.useState('nav__title')
+  const [navBackground, setnavBackground] = React.useState('nav__background')
   
   React.useEffect(() => {
     const onScroll = () => {
       if(window.scrollY > 100){
         setNavBarTitle('nav__titleScroll')
+        setnavBackground('nav__backgroundScroll')
       }else if(window.scrollY < 100){
         setNavBarTitle('nav__title')
+        setnavBackground('nav__background')
       }
     }
 
@@ -24,7 +27,7 @@ const TopNavigation: React.FunctionComponent<ITopNavigationProps> = (props) => {
   })
   return (
     <>
-      <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect fixed="top" expand="lg" className={navBackground}>
       <Container>
         <Navbar.Brand href="#home" className={navBarTitle}> {navBarTitle === 'nav__titleScroll' ? <img src={ServiconLogo} alt='' width='10%' /> : <img src={NyscLogo} alt='' width='8%' />} NYSC IN CAMP ACTIVITIES</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -32,9 +35,9 @@ const TopNavigation: React.FunctionComponent<ITopNavigationProps> = (props) => {
           <Nav className="me-auto">
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">HOME</Nav.Link>
-            <Nav.Link href="#deets">ABOUT</Nav.Link>
-            {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+            <Nav.Link href="#deets" className='nav__list'>HOME</Nav.Link>
+            <Nav.Link href="#deets" className='nav__list'>ABOUT</Nav.Link>
+            <NavDropdown title="ACTIVITIES" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -44,11 +47,10 @@ const TopNavigation: React.FunctionComponent<ITopNavigationProps> = (props) => {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown> */}
-            <Nav.Link href="#deets">SERVICES</Nav.Link>
-            <Nav.Link href="#deets">COURSES</Nav.Link>
-            <Nav.Link href="#deets">PORTFOLIO</Nav.Link>
-            <Nav.Link href="#deets">CONTACT US</Nav.Link>
+            </NavDropdown>
+            <Nav.Link href="#deets" className='nav__list'>COURSES</Nav.Link>
+            <Nav.Link href="#deets" className='nav__list'>PORTFOLIO</Nav.Link>
+            <Nav.Link href="#deets" className='nav__list'>CONTACT US</Nav.Link>
             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

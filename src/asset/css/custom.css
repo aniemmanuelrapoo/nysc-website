@@ -119,5 +119,28 @@
 }
 
 .nav__titleScroll{
-  color: var(--bg-outL-2) !important;
+  color: var(--bg-inL-1) !important;
+}
+
+.nav__background{
+  background-color: rgb(00, 00, 00, 0.1) !important;
+  transition: background-color 400ms linear;
+  -webkit-transition: background-color 400ms linear;
+  -moz-transition: background-color 400ms linear;
+  -o-transition: background-color 400ms linear;
+}
+
+.nav__backgroundScroll{
+  -webkit-transition: background-color 400ms linear;
+  -moz-transition: background-color 400ms linear;
+  -o-transition: background-color 400ms linear;
+  background-color: var(--bg-outL-2);
+  transition: background-color 400ms linear;
+}
+
+.nav__list{
+  color: var(--col-white-1) !important;
+}
+#collasible-nav-dropdown{
+  color: var(--col-white-1);
 }
