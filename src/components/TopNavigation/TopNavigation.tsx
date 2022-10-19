@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import ServiconLogo from '../../asset/image/logo2.png'
 import NyscLogo from '../../asset/image/nysc.png'
+import '../../asset/css/custom.css'
+import '../../asset/css/bootstrap.min.css'
 
 interface ITopNavigationProps {
 }

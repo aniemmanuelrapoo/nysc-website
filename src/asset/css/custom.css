@@ -12,12 +12,23 @@
   --transition: all 400ms ease;
 }
 
+/* .carosel__conMain{
+  height: 80vh;
+}
+
+.carosel__con{
+  height: fit-content;
+}
+
+.imgWidth{
+  width: 100%;
+} */
 
 .top__fixedBanner{
   background-image: url('../image/Banner2.png');
   min-height: 80vh;
   background-attachment: fixed;
-  background-position: center left;
+  background-position: center right;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;

@@ -3,8 +3,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 import updateIcon from '../../asset/image/updated.png';
 import activitesIcon from '../../asset/image/mental-health.png';
 import eventIcon from '../../asset/image/event.png';
-import '../../asset/css/custom.css'
-import '../../asset/css/bootstrap.min.css'
 
 interface IServicesProps {
 }
