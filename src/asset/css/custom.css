@@ -109,3 +109,15 @@
   margin: -1.9rem auto 0;
   margin-bottom: 3rem;
 }
+
+/* Navigation Section */
+.nav__title, .nav__titleScroll{
+  font-family: var(--fontFami-Montserrat);
+  font-weight: 700;
+  font-size: 30px;
+  color: #fff !important;
+}
+
+.nav__titleScroll{
+  color: var(--bg-outL-2) !important;
+}
