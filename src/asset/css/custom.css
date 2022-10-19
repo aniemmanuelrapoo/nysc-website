@@ -14,29 +14,28 @@
 
 
 .top__fixedBanner{
-  background-image: url('../image/banner1.jpg');
-  min-height: 550px;
+  background-image: url('../image/Banner2.png');
+  min-height: 80vh;
   background-attachment: fixed;
-  background-position: center;
+  background-position: center left;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .top__bannerOverlay{
   position: absolute;
-  min-height: 550px;
+  min-height: 80vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.imgWidth{
-  height: 600px;
-  width: 100%;
-}
-
-.top__content{
+/* .top__content{
   margin-top: 10em;
-}
+} */
 
 .top__title{
   font-family: var(--fontFami-Montserrat);
