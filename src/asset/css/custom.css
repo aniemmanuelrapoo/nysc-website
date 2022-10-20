@@ -273,3 +273,11 @@
   font-size: 15px;
   text-decoration: none;
 }
+
+.course__name{
+  font-size: 20px !important;
+}
+
+.course__des{
+  font-size: 12px !important;
+}
