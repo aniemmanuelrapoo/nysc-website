@@ -7,6 +7,7 @@ import Analysis from './components/Analysis/Analysis';
 import Summary from './components/Summary/Summary';
 import RecentActivities from './components/RecentActivities/RecentActivities';
 import Courses from './components/Courses/Courses';
+import Videos from './components/Videos/Videos';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Summary />
       <RecentActivities />
       <Courses />
+      <Videos />
     </div>
   );
 }
