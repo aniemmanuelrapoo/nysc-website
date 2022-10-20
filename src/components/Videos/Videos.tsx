@@ -30,7 +30,7 @@ const Videos: React.FunctionComponent<IVideosProps> = (props) => {
             <FontAwesomeIcon icon={faVideo} className='summary__iconHead' onClick={handleShow} />
           </Col>
         </Row>
-        <Modal show={show} onHide={handleClose}>
+        <Modal size='lg' show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
