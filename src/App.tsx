@@ -8,6 +8,7 @@ import Summary from './components/Summary/Summary';
 import RecentActivities from './components/RecentActivities/RecentActivities';
 import Courses from './components/Courses/Courses';
 import Videos from './components/Videos/Videos';
+import Reviews from './components/Reviews/Reviews';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <RecentActivities />
       <Courses />
       <Videos />
+      <Reviews />
+      <Services />
     </div>
   );
 }
