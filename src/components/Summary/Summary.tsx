@@ -5,6 +5,8 @@ import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
 import { faAward } from '@fortawesome/free-solid-svg-icons';
+import CountUp from 'react-countup';
+import ReactVisibilitySensor from 'react-visibility-sensor';
 
 interface ISummaryProps {
 }
@@ -20,19 +22,43 @@ const Summary: React.FunctionComponent<ISummaryProps> = (props) => {
               <Row className='count__section'>
                 <Col>
                 <FontAwesomeIcon icon={faGlobe} className='summary__iconHead' />
-                  <h1 className='count__number'>35000+</h1>
+                  <h1 className='count__number'>
+                    <CountUp start={0} end={35000}>
+                      {({ countUpRef, start }) => (
+                        <ReactVisibilitySensor onChange={start} delayedCall>
+                          <span ref={countUpRef} />
+                      </ReactVisibilitySensor>
+                      )}
+                    </CountUp>+
+                  </h1>
                   <h4 className='count__title'>Corpers Worldwide</h4>
                   <hr className='count__line' />
                 </Col>
                 <Col>
                 <FontAwesomeIcon icon={faPeopleGroup} className='summary__iconHead' />
-                  <h1 className='count__number'>40</h1>
+                  <h1 className='count__number'>
+                    <CountUp start={0} end={40}>
+                      {({ countUpRef, start }) => (
+                        <ReactVisibilitySensor onChange={start} delayedCall>
+                          <span ref={countUpRef} />
+                      </ReactVisibilitySensor>
+                      )}
+                    </CountUp>+
+                  </h1>
                   <h4 className='count__title'> All CDS Groups</h4>
                   <hr className='count__line' />
                 </Col>
                 <Col>
                 <FontAwesomeIcon icon={faAward} className='summary__iconHead' />
-                  <h1 className='count__number'>500+</h1>
+                  <h1 className='count__number'>
+                    <CountUp start={0} end={1000}>
+                      {({ countUpRef, start }) => (
+                        <ReactVisibilitySensor onChange={start} delayedCall>
+                          <span ref={countUpRef} />
+                      </ReactVisibilitySensor>
+                      )}
+                    </CountUp>+
+                  </h1>
                   <h4 className='count__title'>Programs & Awards</h4>
                   <hr className='count__line' />
                 </Col>
