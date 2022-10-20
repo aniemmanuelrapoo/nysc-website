@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Col, Container, Row, Modal, Button  } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo} from '@fortawesome/free-solid-svg-icons';
+import 'video-react/dist/video-react.css';
+import { BigPlayButton, Player } from 'video-react';
 
 interface IVideosProps {
 }
@@ -31,16 +33,14 @@ const Videos: React.FunctionComponent<IVideosProps> = (props) => {
           </Col>
         </Row>
         <Modal size='lg' show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
+          <Modal.Body className='video__play'>
+            <Player src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
+              <BigPlayButton position="center" />
+            </Player>
+          </Modal.Body>
+          <Modal.Footer className='video__play'>
             <Button variant="secondary" onClick={handleClose}>
               Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
             </Button>
           </Modal.Footer>
         </Modal>

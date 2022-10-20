@@ -294,3 +294,7 @@
 .video__text{
   margin-top: 2% !important;
 }
+
+.video__play{
+  background-color: var(--bg-outL-2) !important;
+}
