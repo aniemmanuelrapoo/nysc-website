@@ -281,3 +281,16 @@
 .course__des{
   font-size: 12px !important;
 }
+
+/* Videos section */
+.video__card{
+  box-shadow: 0 13px 20px -5px rgba(0, 0, 0, 0.8);
+  padding: 8rem 3rem;
+  background-color: var(--bg-outL-2);
+  margin: 5% auto;
+  border-radius: 5px;
+}
+
+.video__text{
+  margin-top: 2% !important;
+}
