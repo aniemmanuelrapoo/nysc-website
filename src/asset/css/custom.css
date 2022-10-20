@@ -208,7 +208,7 @@
 }
 
 .summaery__cardContainer1{
-  background-color: var(--bg-inL-1) !important;
+  background-color: var(--bg-inD-2) !important;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
   transition: var(--transition);
   border: 2px solid transparent !important;
@@ -234,4 +234,15 @@
   font-family: var(--fontFami-Raleway);
   font-weight: 600;
   font-size: 14px;
+  text-align: left;
+}
+
+.summary__iconBullet{
+  color: var(--col-dark-1);
+  font-size: 16px;
+}
+
+.summary__iconHead{
+  color: var(--bg-inL-1);
+  font-size: 40px;
 }
