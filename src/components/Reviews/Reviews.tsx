@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import StateCord from '../../asset/image/SC1-1.jpg'
-import SheduleOfficer from '../../asset/image/officer.jpeg'
+// import SheduleOfficer from '../../asset/image/officer.jpeg'
 
 interface IReviewsProps {
 }
