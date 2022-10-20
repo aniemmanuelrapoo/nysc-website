@@ -260,3 +260,16 @@
 .activity__card:hover{
   transform: scale(1.03);
 }
+
+/* Courses Section */
+.course__image{
+  width: 100%;
+}
+
+.course__viewMore{
+  color: var(--bg-outL-2);
+  font-family: var(--fontFami-Montserrat);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+}
