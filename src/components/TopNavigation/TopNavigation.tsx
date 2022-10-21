@@ -32,14 +32,17 @@ const TopNavigation: React.FunctionComponent<ITopNavigationProps> = (props) => {
       <Navbar collapseOnSelect fixed="top" expand="lg" className={navBackground}>
       <Container>
         <Navbar.Brand href="#home" className={`${navBarTitle} nav__sideOne`}> {navBarTitle === 'nav__titleScroll' ? <img src={ServiconLogo} alt='' width='20%' /> : <img src={NyscLogo} alt='' width='15%' />} NYSC CAMP ACTIVITIES</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" className='nav__toggle' />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
           </Nav>
           <Nav className='nav__sideTwo'>
             <Nav.Link href="#deets" className='nav__list'>HOME</Nav.Link>
             <Nav.Link href="#deets" className='nav__list'>ABOUT</Nav.Link>
-            <NavDropdown title="ACTIVITIES" id="collasible-nav-dropdown">
+            <Nav.Link href="#deets" className='nav__list'>LECTURES</Nav.Link>
+            <Nav.Link href="#deets" className='nav__list'>ACTIVITIES</Nav.Link>
+            <Nav.Link href="#deets" className='nav__list'>CONTACT US</Nav.Link>
+            <NavDropdown title="PROFILE" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -50,20 +53,6 @@ const TopNavigation: React.FunctionComponent<ITopNavigationProps> = (props) => {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#deets" className='nav__list'>COURSES</Nav.Link>
-            <Nav.Link href="#deets" className='nav__list'>PORTFOLIO</Nav.Link>
-            <Nav.Link href="#deets" className='nav__list'>CONTACT US</Nav.Link>
-            {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

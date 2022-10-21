@@ -15,7 +15,7 @@ const Footer: React.FunctionComponent<IFooterProps> = (props) => {
       <Container fluid className='footer__section'>
         <Row>
           <Col lg={3} md={6} sm={12} className='p-5 text-center'>
-            <h2 className='footer__name'>Follow Us</h2>
+            <h2 className='footer__name text-center'>Follow Us</h2>
             <div className='footer__socialContainer'>
               <a href="https://web.facebook.com/officialnysc" rel='noreferrer noopener'>
               <FontAwesomeIcon icon={faFacebook} size="2x" className='footer__social facebook' />  

@@ -167,6 +167,11 @@
   justify-content: right;
 }
 
+.nav__toggle{
+  background-color: var(--col-white-1) !important;
+  color: var(--col-white-1) !important;
+}
+
 /* Summary Section */
 .top__fixedBanner1{
   background-image: url('../image/nysc.png');
@@ -372,7 +377,6 @@
   margin-top: 1rem;
   font-size: 20px;
   font-weight: 600;
-  text-align: center;
 }
 
 .footer__socialContainer{
