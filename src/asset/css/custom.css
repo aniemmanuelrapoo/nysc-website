@@ -431,3 +431,29 @@
   text-decoration: underline;
   color: var(--col-white-1);
 }
+
+/* TopPage Section */
+.top__fixedPage{
+  background-image: url('../image/logo2.png');
+  min-height: 35vh;
+  background-attachment: fixed;
+  background-position: left top;
+  width: 100%;
+}
+
+.top__pageOverlay{
+  position: absolute;
+  min-height: 35vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top__pageTitle{
+  font-family: var(--fontFami-Montserrat);
+  font-weight: 700 !important;
+  color: var(--col-white-1);
+  font-size: 40px;
+}
