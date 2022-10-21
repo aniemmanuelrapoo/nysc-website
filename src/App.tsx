@@ -9,6 +9,7 @@ import RecentActivities from './components/RecentActivities/RecentActivities';
 import Courses from './components/Courses/Courses';
 import Videos from './components/Videos/Videos';
 import Reviews from './components/Reviews/Reviews';
+import AboutMe from './components/AboutMe/AboutMe';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Courses />
       <Videos />
       <Reviews />
+      <AboutMe />
       <Services />
     </div>
   );
