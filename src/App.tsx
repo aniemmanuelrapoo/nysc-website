@@ -2,12 +2,12 @@ import React from 'react'
 import './App.css'
 import './asset/css/custom.css'
 import './asset/css/bootstrap.min.css'
-import ActivitiesPage from './pages/ActivitiesPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
     <div className='App'>
-      <ActivitiesPage />
+      <ContactPage />
     </div>
   );
 }
