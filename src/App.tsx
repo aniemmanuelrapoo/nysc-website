@@ -10,6 +10,7 @@ import Courses from './components/Courses/Courses';
 import Videos from './components/Videos/Videos';
 import Reviews from './components/Reviews/Reviews';
 import AboutMe from './components/AboutMe/AboutMe';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
       <Videos />
       <Reviews />
       <AboutMe />
-      <Services />
+      <Footer />
     </div>
   );
 }
