@@ -38,11 +38,21 @@ const Footer: React.FunctionComponent<IFooterProps> = (props) => {
           </Col>
           <Col lg={3} md={6} sm={12} className='p-5 text-start'>
             <h2 className='footer__name'>Information</h2>
+            <a className="footer__link" href="/#" rel='noreferrer noopener'>About Us</a><br></br>
+            <a  className="footer__link" href="/#" rel='noreferrer noopener'>Activitie </a><br></br>
+            <a  className="footer__link" href="/#" rel='noreferrer noopener'>Lectures </a><br></br>
+            <a className="footer__link" href="/#" rel='noreferrer noopener'>Contact Us</a><br></br>
           </Col>
           <Col lg={3} md={6} sm={12} className='p-5 text-start'>
             <h2 className='footer__name'>Policy</h2>
+            <a className="footer__link" href="/#" rel='noreferrer noopener'>Servicom Policy</a> <br></br>
+            <a className="footer__link" href="/#" rel='noreferrer noopener'>Trems And Condition</a> <br></br>
+            <a className="footer__link" href="/#" rel='noreferrer noopener'>Privaci Policy</a> <br></br>
           </Col>
         </Row>
+      </Container>
+      <Container fluid className="text-center copyright__section">
+        <a className="copyright__link" href="https://aniemmanuelrapoo.netlify.app/">© Copyright 2022 by <a href="https://aniemmanuelrapoo.netlify.app/">Rapoo</a>, All Rights Reserved</a>
       </Container>
     </>
   );

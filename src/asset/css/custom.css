@@ -391,9 +391,39 @@
 }
 
 .footer__AddressDes{
-  color: #e9e8e8;
+  color: var(--col-white-1);
   margin-top: 1rem;
   font-family: var(--fontFami-Raleway);
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 600;
+}
+
+.footer__link{
+  text-decoration: none;
+  font-family: var(--fontFami-Raleway);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--col-white-1);
+  transition: var(--transition);
+}
+
+.footer__link:hover{
+  text-decoration: none; 
+  color: var(--bg-inL-1);
+}
+
+.copyright__section{
+  padding: 20px;
+  background-color: var(--bg-outD-1);
+}
+.copyright__link{
+  text-decoration: none;
+  color: var(--col-white-1);
+  font-family: var(--fontFami-Raleway);
+  font-size: 15px;
+  font-weight: 600;
+}
+.copyright__link:hover{
+  text-decoration: underline;
+  color: var(--col-white-1);
 }
