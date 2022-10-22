@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Routes, Route } from "react-router-dom";
 import AboutPage from '../pages/AboutPage';
+import ActivitiesDetailsPage from '../pages/ActivitiesDetailsPage';
 import ActivitiesPage from '../pages/ActivitiesPage';
 import AllCoursesPage from '../pages/AllCoursesPage';
 import AllServicePage from '../pages/AllServicePage';
@@ -24,6 +25,7 @@ const AppRouter: React.FunctionComponent<IAppRouterProps> = (props) => {
         <Route path="services" element={<AllServicePage />}/>
         <Route path="lectures" element={<AllCoursesPage />}/>
         <Route path="activities" element={<ActivitiesPage />}/>
+        <Route path="activitiesdetails" element={<ActivitiesDetailsPage />}/>
         <Route path="contact" element={<ContactPage />}/>
         <Route path="profile" element={<ProfilePage />}/>
         <Route path="nyscpolicy" element={<NyscPolicyPage />}/>

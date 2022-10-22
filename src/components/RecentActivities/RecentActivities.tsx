@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 interface IRecentActivitiesProps {
 }
@@ -20,7 +21,7 @@ const RecentActivities: React.FunctionComponent<IRecentActivitiesProps> = (props
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
                 </Card.Text>
-                <Button variant="primary">View All Activities</Button>
+                <Button variant="primary"><Link to='/activitiesdetails' className="activities__link">View Activity</Link></Button>
               </Card.Body>
             </Card>
           </Col>
@@ -33,7 +34,7 @@ const RecentActivities: React.FunctionComponent<IRecentActivitiesProps> = (props
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
                 </Card.Text>
-                <Button variant="primary">View All Activities</Button>
+                <Button variant="primary"><Link to='/activitiesdetails' className="activities__link">View Activity</Link></Button>
               </Card.Body>
             </Card>
           </Col>
@@ -46,7 +47,7 @@ const RecentActivities: React.FunctionComponent<IRecentActivitiesProps> = (props
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
                 </Card.Text>
-                <Button variant="primary">View All Activities</Button>
+                <Button variant="primary"><Link to='/activitiesdetails' className="activities__link">View Activity</Link></Button>
               </Card.Body>
             </Card>
           </Col>

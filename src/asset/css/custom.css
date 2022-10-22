@@ -277,6 +277,11 @@
   transform: scale(1.03);
 }
 
+.activities__link{
+  color: var(--col-white-1);
+  text-decoration: none;
+}
+
 /* Courses Section */
 .course__image{
   width: 100%;
@@ -436,6 +441,7 @@
   padding: 20px;
   background-color: var(--bg-outD-1);
 }
+
 .copyright__link{
   text-decoration: none;
   color: var(--col-white-1);
@@ -443,6 +449,7 @@
   font-size: 15px;
   font-weight: 600;
 }
+
 .copyright__link:hover{
   text-decoration: underline;
   color: var(--col-white-1);
@@ -484,12 +491,14 @@
   margin-bottom: 45px;
   position: relative;
 }
+
 .section-title .sub-title {
   font-weight: 500;
   position: relative;
   display: inline-block;
   margin-bottom: 0;
 }
+
 .section-title .sub-title.double-line:before {
   content: "";
   position: absolute;
@@ -499,6 +508,7 @@
   width: 40px;
   background: var(--bg-inD-2);
 }
+
 .section-title .sub-title.double-line:after {
   content: "";
   position: absolute;
@@ -508,6 +518,7 @@
   width: 40px;
   background: var(--bg-inD-2);
 }
+
 .intro-area-inner {
   box-shadow: 0 0 30px rgb(0 0 0 / 7%);
   background: var(--bg-outL-2);
@@ -526,24 +537,32 @@
   padding: 30px 30px 10px;
   border-radius: 0 0 10px 10px;
 }
+
 .bg-base {
   background: var(--bg-inL-1);
 }
+
 .sideImg{
   margin-top: -15px;
 }
+
 .homeIntro{
   font-family: var(--fontFami-Montserrat);
   font-weight: 700;
   color: var(--bg-outD-1);
   font-size: 16px;
 }
+
 .welcome__text{
   text-align: left;
 }
 
 /* MEDIA QUERIES (medium screen) */
 @media screen and (max-width: 1024px) {
+  .welcome__text{
+    text-align: center;
+  }
+
   .count__number{
     font-size: 30px;
   }
