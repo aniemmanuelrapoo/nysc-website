@@ -10,7 +10,7 @@ interface IContactPageProps {
 const ContactPage: React.FunctionComponent<IContactPageProps> = (props) => {
   return(
     <>
-      <TopNavigation />
+      <TopNavigation pageTitle="Contact Us" />
       <PageTop pageTitle="Contact Us" />
       <ContactSec />
       <Footer />

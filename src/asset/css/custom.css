@@ -126,8 +126,9 @@
 .nav__title, .nav__titleScroll{
   font-family: var(--fontFami-Montserrat);
   font-weight: 700;
-  font-size: 30px;
+  font-size: 20px;
   color: #fff !important;
+  text-decoration: none;
 }
 
 .nav__titleScroll{
@@ -150,9 +151,9 @@
   transition: background-color 400ms linear;
 }
 
-.nav__list, #collasible-nav-dropdown{
+.nav__list, #collasible-nav-dropdown, .active{
   text-decoration: none !important;
-  color: var(--col-white-1) !important;
+  color: var(--col-white-1);
   font-family: var(--fontFami-Montserrat);
   font-size: 15px !important;
   font-weight: 700 !important;
@@ -161,6 +162,10 @@
 
 .nav__list:hover{
   color: var(--bg-inD-2) !important;
+}
+
+.active{
+  color: var(--bg-inD-2);
 }
 
 .nav__sideOne{

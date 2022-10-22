@@ -17,7 +17,7 @@ interface IHomePageProps {
 const HomePage: React.FunctionComponent<IHomePageProps> = (props) => {
   return (
     <>
-      <TopNavigation />
+      <TopNavigation pageTitle="NYSC Camp Activities" />
       <TopBanner />
       <Services />
       <Analysis />

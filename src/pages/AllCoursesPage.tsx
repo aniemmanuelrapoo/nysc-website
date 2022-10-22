@@ -10,7 +10,7 @@ interface IAllCoursesPageProps {
 const AllCoursesPage: React.FunctionComponent<IAllCoursesPageProps> = (props) => {
   return (
     <>
-      <TopNavigation />
+      <TopNavigation pageTitle="All Lectures" />
       <PageTop pageTitle="All Lectures" />
       <AllCourses />
       <Footer />

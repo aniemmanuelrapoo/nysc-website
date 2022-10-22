@@ -11,7 +11,7 @@ interface IAllServicePageProps {
 const AllServicePage: React.FunctionComponent<IAllServicePageProps> = (props) => {
   return (
     <>
-      <TopNavigation />
+      <TopNavigation pageTitle="Our Services" />
       <PageTop pageTitle="Our Services" />
       <Services />
       <ContactSec />

@@ -10,7 +10,7 @@ interface IActivitiesPageProps {
 const ActivitiesPage: React.FunctionComponent<IActivitiesPageProps> = (props) => {
   return(
     <>
-      <TopNavigation />
+      <TopNavigation pageTitle="All Activities" />
       <PageTop pageTitle="All Activities" />
       <AllActivities />
       <Footer />

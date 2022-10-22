@@ -11,7 +11,7 @@ interface IAboutPageProps {
 const AboutPage: React.FunctionComponent<IAboutPageProps> = (props) => {
   return (
     <>
-      <TopNavigation />
+      <TopNavigation pageTitle="About Us" />
       <PageTop pageTitle="About Us" />
       <AboutMe />
       <AboutDescription />
