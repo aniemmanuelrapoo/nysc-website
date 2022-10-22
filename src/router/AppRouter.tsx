@@ -6,6 +6,7 @@ import AllCoursesPage from '../pages/AllCoursesPage';
 import AllServicePage from '../pages/AllServicePage';
 import ContactPage from '../pages/ContactPage';
 import HomePage from '../pages/HomePage';
+import NyscPolicyPage from '../pages/NyscPolicyPage';
 import ProfilePage from '../pages/ProfilePage';
 
 interface IAppRouterProps {
@@ -23,6 +24,7 @@ const AppRouter: React.FunctionComponent<IAppRouterProps> = (props) => {
         <Route path="activities" element={<ActivitiesPage />}/>
         <Route path="contact" element={<ContactPage />}/>
         <Route path="profile" element={<ProfilePage />}/>
+        <Route path="nyscpolicy" element={<NyscPolicyPage />}/>
         {/* <Route path="*" element={<NotFound/>}/> */}
       </Routes>
     </>
