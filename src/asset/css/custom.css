@@ -151,11 +151,16 @@
 }
 
 .nav__list, #collasible-nav-dropdown{
-  /* text-decoration: none !important; */
+  text-decoration: none !important;
   color: var(--col-white-1) !important;
   font-family: var(--fontFami-Montserrat);
   font-size: 15px !important;
   font-weight: 700 !important;
+  transition: var(--transition);
+}
+
+.nav__list:hover{
+  color: var(--bg-inD-2) !important;
 }
 
 .nav__sideOne{

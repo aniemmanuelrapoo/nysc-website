@@ -2,12 +2,12 @@ import React from 'react'
 import './App.css'
 import './asset/css/custom.css'
 import './asset/css/bootstrap.min.css'
-import AllServicePage from './pages/AllServicePage';
+import AppRouter from './router/AppRouter';
 
 function App() {
   return (
     <div className='App'>
-      <AllServicePage />
+      <AppRouter />
     </div>
   );
 }
