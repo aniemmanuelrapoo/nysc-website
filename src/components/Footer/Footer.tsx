@@ -47,8 +47,8 @@ const Footer: React.FunctionComponent<IFooterProps> = (props) => {
           <Col lg={3} md={6} sm={12} className='p-5 text-start'>
             <h2 className='footer__name'>Policy</h2>
             <NavLink className="footer__link" to="/nyscpolicy" >NYSC Policy</NavLink> <br></br>
-            <NavLink className="footer__link" to="/#" >Trems And Condition</NavLink> <br></br>
-            <NavLink className="footer__link" to="/#" >Privaci Policy</NavLink> <br></br>
+            <NavLink className="footer__link" to="/termsandcondition" >Trems And Condition</NavLink> <br></br>
+            <NavLink className="footer__link" to="/privacypolicy" >Privacy Policy</NavLink> <br></br>
           </Col>
         </Row>
       </Container>
