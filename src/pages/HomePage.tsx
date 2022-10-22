@@ -10,6 +10,7 @@ import Summary from '../components/Summary/Summary';
 import TopBanner from '../components/TopBanner/TopBanner';
 import TopNavigation from '../components/TopNavigation/TopNavigation';
 import Videos from '../components/Videos/Videos';
+import Welcome from '../components/Welcome/Welcome';
 
 interface IHomePageProps {
 }
@@ -19,6 +20,7 @@ const HomePage: React.FunctionComponent<IHomePageProps> = (props) => {
     <>
       <TopNavigation pageTitle="NYSC Camp Activities" />
       <TopBanner />
+      <Welcome />
       <Services />
       <Analysis />
       <Summary />
