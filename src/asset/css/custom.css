@@ -492,7 +492,7 @@
   top: 10px;
   height: 2px;
   width: 40px;
-  background: var(--col-white-1);
+  background: var(--bg-inD-2);
 }
 .section-title .sub-title.double-line:after {
   content: "";
@@ -501,7 +501,7 @@
   top: 10px;
   height: 2px;
   width: 40px;
-  background: var(--col-white-1);
+  background: var(--bg-inD-2);
 }
 .intro-area-inner {
   box-shadow: 0 0 30px rgb(0 0 0 / 7%);
@@ -513,23 +513,36 @@
 .maintitle{
   font-family: var(--fontFami-Montserrat);
   font-weight: 700;
-  color: var(--bg-inD-2);
+  color: var(--col-dark-1);
   font-size: 40px;
 }
 
 .intro-footer {
   padding: 30px 30px 10px;
-  border-radius: 0 0 7px 7px;
+  border-radius: 0 0 10px 10px;
 }
 .bg-base {
-  background: #fdc800;
+  background: var(--bg-inL-1);
 }
 .sideImg{
   margin-top: -15px;
 }
 .homeIntro{
-  font-family: 'Montserrat',sans-serif;
+  font-family: var(--fontFami-Montserrat);
   font-weight: 700;
-  color: #051b35;
+  color: var(--bg-outD-1);
   font-size: 16px;
+}
+.welcome__text{
+  text-align: left;
+}
+
+/* MEDIA QUERIES (medium screen) */
+@media screen and (max-width: 1024px) {}
+
+/* MEDIA QUERIES (small screen) */
+@media screen and (max-width: 600px) {
+  .welcome__text{
+    text-align: center;
+  }
 }
