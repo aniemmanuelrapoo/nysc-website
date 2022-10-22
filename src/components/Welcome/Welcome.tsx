@@ -28,57 +28,57 @@ const Welcome: React.FunctionComponent<IWelcomeProps> = (props) => {
                     <Row>
                       <Col lg={4} md={6} sm={12}>
                         <img src={pageone} alt='' />
-                        <h1 className="service__name">Easy As it Gets </h1>
-                        <p className="service__discription">Lorem ipsum dolor</p>
+                        <h1 className="service__name">Lectures</h1>
+                        <p className="service__discription">All Lecture Notes</p>
                       </Col>
 
                       <Col lg={4} md={6} sm={12}>
                         <img src={pagetwo} alt='' />
-                        <h1 className="service__name">Teach The way you want</h1>
-                        <p className="service__discription">Lorem ipsum dolor</p>
+                        <h1 className="service__name">Sports</h1>
+                        <p className="service__discription">All Sports Scores Upate</p>
                       </Col>
 
                       <Col lg={4} md={6} sm={12}>
                         <img src={pagethree} alt='' />
-                        <h1 className="service__name">The small matter</h1>
-                        <p className="service__discription">Lorem ipsum dolor</p>
+                        <h1 className="service__name">SAED</h1>
+                        <p className="service__discription">All SAED Packages To Learn</p>
                       </Col>
                     </Row>
 
                     <Row className="intro-footer bg-base text-center mt-5">
-                      <Col lg={4} md={6} sm={12}>
+                      <Col lg={4} md={6} sm={12} className='mb-2'>
                         <Row>
-                          <Col lg={6} md={6} sm={12}>
+                          <Col lg={4} md={4} sm={12}>
                             <img className="sideImg" src={imgone} alt='' />
                           </Col>
 
-                          <Col lg={6} md={6} sm={12}>
-                            <h5 className="homeIntro welcome__text">Development</h5>
-                            <p className="service__discription welcome__text">Lorem ipsum dolor</p>
+                          <Col lg={8} md={8} sm={12}>
+                            <h5 className="homeIntro welcome__text">Discipline</h5>
+                            <p className="service__discription welcome__text">Always Be Disciplined</p>
                           </Col>
                         </Row>
                       </Col>
 
-                      <Col lg={4} md={6} sm={12}>
+                      <Col lg={4} md={6} sm={12} className='mb-2'>
                         <Row>
-                          <Col lg={6} md={6} sm={12}>
+                          <Col lg={4} md={4} sm={12}>
                             <img className="sideImg" src={imgtwo} alt='' />
                           </Col>
 
-                          <Col lg={6} md={6} sm={12}>
-                            <h5 className="homeIntro welcome__text">Web Design</h5>
-                            <p className="service__discription welcome__text">Lorem ipsum dolor</p>
+                          <Col lg={8} md={8} sm={12}>
+                            <h5 className="homeIntro welcome__text">Education</h5>
+                            <p className="service__discription welcome__text">Be Open To Education</p>
                           </Col>
                         </Row>
                       </Col>
-                      <Col lg={4} md={6} sm={12}>
+                      <Col lg={4} md={6} sm={12} className='mb-2'>
                         <Row>
-                          <Col lg={6} md={6} sm={12}>
+                          <Col lg={4} md={4} sm={12}>
                             <img className="sideImg" src={imgthree} alt='' />
                           </Col>
-                          <Col lg={6} md={6} sm={12}>
-                            <h5 className="homeIntro welcome__text">Ecommerce</h5>
-                            <p className="service__discription welcome__text">Lorem ipsum dolor</p>
+                          <Col lg={8} md={8} sm={12}>
+                            <h5 className="homeIntro welcome__text">Entertainment</h5>
+                            <p className="service__discription welcome__text">Enjoy All Camp Entertainment</p>
                           </Col>
                         </Row>
                       </Col>

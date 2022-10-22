@@ -266,8 +266,9 @@
 /* Activity Section */
 .activity__card{
   padding: 0px 0px;
-  margin: 1em;
-  width: 22em;
+  justify-content: space-between;
+  margin: 1rem 0;
+  width: 21em;
   border-radius: 0.6em;
   cursor: pointer;
 }
@@ -427,6 +428,10 @@
   color: var(--bg-inL-1);
 }
 
+.footer__col{
+  padding: 70px !important;
+}
+
 .copyright__section{
   padding: 20px;
   background-color: var(--bg-outD-1);
@@ -538,11 +543,41 @@
 }
 
 /* MEDIA QUERIES (medium screen) */
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+  .count__number{
+    font-size: 30px;
+  }
+
+  .count__title{
+    font-size: 18px;
+  }
+  .footer__col{
+    padding: 30px !important;
+  }
+}
 
 /* MEDIA QUERIES (small screen) */
 @media screen and (max-width: 600px) {
   .welcome__text{
     text-align: center;
+  }
+  .count__number{
+    font-size: 20px;
+  }
+
+  .count__title{
+    font-size: 15px;
+  }
+
+  .summaery__cardContainer1{
+    margin-top: 7%;
+  }
+
+  .footer__col{
+    padding: 20px !important;
+  }
+
+  .activity__card{
+    width: 24rem;
   }
 }
