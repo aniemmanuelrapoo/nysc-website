@@ -722,6 +722,6 @@
   }
 
   .activity__card{
-    width: 21rem;
+    width: 100%;
   }
 }
