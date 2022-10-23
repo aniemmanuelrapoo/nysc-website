@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Col, Container, Row, Button  } from 'react-bootstrap';
+import { Col, Container, Row  } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCheckSquare} from '@fortawesome/free-solid-svg-icons'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
@@ -7,6 +7,8 @@ import {faClock} from '@fortawesome/free-solid-svg-icons'
 import {faClipboard} from '@fortawesome/free-solid-svg-icons'
 import {faClone} from '@fortawesome/free-solid-svg-icons'
 import {faTags} from '@fortawesome/free-solid-svg-icons'
+import 'video-react/dist/video-react.css';
+import { BigPlayButton, Player } from 'video-react';
 
 interface ICourseDetailsProps {
 }
@@ -47,6 +49,31 @@ const CourseDetails: React.FunctionComponent<ICourseDetailsProps> = (props) => {
               <h5 className='price-contact'>08183225008</h5>
               </div>
             </div>
+          </Col>
+        </Row>
+      </Container>
+
+
+      <br></br><br></br>
+      <Container>
+        <Row>
+          <Col lg={6} md={6} sm={12} className='mb-4'>
+            <div className="widget_feature">
+              <h1 className="coruseDetailsText"> Skills You Need  </h1>   
+              <hr />
+              <ul>
+                <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} /> Metus interdum metus</li>
+                <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} /> Ligula cur maecenas</li>
+                <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} /> Metus interdum metus</li>
+                <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} />Ligula cur maecenass</li>
+                <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} /> Metus interdum metus</li>
+              </ul>           
+            </div>
+          </Col>
+          <Col lg={6} md={6} sm={12} className='mb-4'>
+            <Player src="https://dl150.y2mate.com/?file=M3R4SUNiN3JsOHJ6WWQ3aTdPRFA4NW1rRVJIODVhTjF3SjRjemdNM1NxUks3YUVxME9HdUo0SUVCN2RFNEl1c1d1aG52aFBSZXRYQUJCYWF1Wlp0Q1Y2VTdjOCtvekhPdUxrcFE5eHdXaC9pbXVXcGx3NGgyMWZsTU5YZFFmNVFaSHQrbkZCaXh5N09pYVB5b0JydHAyaXZvZ2pSU2lrYTVuNVpHL2FWbzdsUGdYcmVlcURzd3BFbnFobklzTXBabFAyTjRFZnh4cjFqbHZzelcxeGtlb0pZelpQNDJxMmQ4eEZQMWMxSmpodjI3L0d3VzVvM1NnPT0%3D">
+              <BigPlayButton position="center" />
+            </Player>
           </Col>
         </Row>
       </Container>
