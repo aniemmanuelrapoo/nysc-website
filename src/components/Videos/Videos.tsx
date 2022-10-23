@@ -1,10 +1,18 @@
+import VideoPlayer from './VideoFmt'
 import * as React from 'react';
 import { Col, Container, Row, Modal, Button  } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo} from '@fortawesome/free-solid-svg-icons';
-import 'video-react/dist/video-react.css';
-import { BigPlayButton, Player } from 'video-react';
 const nyscVideo =  require("../../asset/image/anthem.mp4")
+
+const videoJsOptions = {
+  sources: [
+    {
+      src: nyscVideo,
+      type: "video/mp4"
+    }
+  ]
+};
 
 interface IVideosProps {
 }
@@ -35,9 +43,7 @@ const Videos: React.FunctionComponent<IVideosProps> = (props) => {
         </Row>
         <Modal size='lg' show={show} onHide={handleClose}>
           <Modal.Body className='video__play'>
-            <Player src={nyscVideo}>
-              <BigPlayButton position="center" />
-            </Player>
+            <VideoPlayer options={videoJsOptions} />
           </Modal.Body>
           <Modal.Footer className='video__play'>
             <Button variant="secondary" onClick={handleClose}>

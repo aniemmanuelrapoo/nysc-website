@@ -1,3 +1,4 @@
+import VideoPlayer from '../Videos/VideoFmt'
 import * as React from 'react';
 import { Col, Container, Row  } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,8 +8,15 @@ import {faClock} from '@fortawesome/free-solid-svg-icons'
 import {faClipboard} from '@fortawesome/free-solid-svg-icons'
 import {faClone} from '@fortawesome/free-solid-svg-icons'
 import {faTags} from '@fortawesome/free-solid-svg-icons'
-import 'video-react/dist/video-react.css';
-import { BigPlayButton, Player } from 'video-react';
+
+const videoJsOptions = {
+  sources: [
+    {
+      src: "//vjs.zencdn.net/v/oceans.mp4",
+      type: "video/mp4"
+    }
+  ]
+};
 
 interface ICourseDetailsProps {
 }
@@ -71,9 +79,7 @@ const CourseDetails: React.FunctionComponent<ICourseDetailsProps> = (props) => {
             </div>
           </Col>
           <Col lg={6} md={6} sm={12} className='mb-4'>
-            <Player src="https://dl150.y2mate.com/?file=M3R4SUNiN3JsOHJ6WWQ3aTdPRFA4NW1rRVJIODVhTjF3SjRjemdNM1NxUks3YUVxME9HdUo0SUVCN2RFNEl1c1d1aG52aFBSZXRYQUJCYWF1Wlp0Q1Y2VTdjOCtvekhPdUxrcFE5eHdXaC9pbXVXcGx3NGgyMWZsTU5YZFFmNVFaSHQrbkZCaXh5N09pYVB5b0JydHAyaXZvZ2pSU2lrYTVuNVpHL2FWbzdsUGdYcmVlcURzd3BFbnFobklzTXBabFAyTjRFZnh4cjFqbHZzelcxeGtlb0pZelpQNDJxMmQ4eEZQMWMxSmpodjI3L0d3VzVvM1NnPT0%3D">
-              <BigPlayButton position="center" />
-            </Player>
+            <VideoPlayer options={videoJsOptions} />
           </Col>
         </Row>
       </Container>
