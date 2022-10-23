@@ -149,6 +149,7 @@
   -o-transition: background-color 400ms linear;
   background-color: var(--bg-outL-2);
   transition: background-color 400ms linear;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.7);
 }
 
 .nav__list, #collasible-nav-dropdown, .active{
