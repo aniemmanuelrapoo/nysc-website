@@ -8,6 +8,9 @@ interface IAllCoursesPageProps {
 }
 
 const AllCoursesPage: React.FunctionComponent<IAllCoursesPageProps> = (props) => {
+  React.useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   return (
     <>
       <TopNavigation pageTitle="All Lectures" />

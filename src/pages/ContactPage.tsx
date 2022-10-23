@@ -8,6 +8,9 @@ interface IContactPageProps {
 }
 
 const ContactPage: React.FunctionComponent<IContactPageProps> = (props) => {
+  React.useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   return(
     <>
       <TopNavigation pageTitle="Contact Us" />

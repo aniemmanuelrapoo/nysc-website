@@ -9,6 +9,9 @@ interface IAboutPageProps {
 }
 
 const AboutPage: React.FunctionComponent<IAboutPageProps> = (props) => {
+  React.useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   return (
     <>
       <TopNavigation pageTitle="About Us" />

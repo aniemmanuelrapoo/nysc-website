@@ -8,6 +8,9 @@ interface IProfilePageProps {
 }
 
 const ProfilePage: React.FunctionComponent<IProfilePageProps> = (props) => {
+  React.useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   return (
     <>
       <TopNavigation pageTitle="User Profile" />

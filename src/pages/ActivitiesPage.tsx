@@ -8,6 +8,9 @@ interface IActivitiesPageProps {
 }
 
 const ActivitiesPage: React.FunctionComponent<IActivitiesPageProps> = (props) => {
+  React.useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   return(
     <>
       <TopNavigation pageTitle="All Activities" />

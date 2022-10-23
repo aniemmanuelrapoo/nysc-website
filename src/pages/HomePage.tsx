@@ -16,6 +16,9 @@ interface IHomePageProps {
 }
 
 const HomePage: React.FunctionComponent<IHomePageProps> = (props) => {
+  React.useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   return (
     <>
       <TopNavigation pageTitle="NYSC Camp Activities" />

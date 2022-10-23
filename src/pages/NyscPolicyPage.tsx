@@ -8,6 +8,9 @@ interface INyscPolicyPageProps {
 }
 
 const NyscPolicyPage: React.FunctionComponent<INyscPolicyPageProps> = (props) => {
+  React.useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   return (
     <>
       <TopNavigation pageTitle="NYSC Policy" />

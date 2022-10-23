@@ -8,6 +8,9 @@ interface IActivitiesDetailsPageProps {
 }
 
 const ActivitiesDetailsPage: React.FunctionComponent<IActivitiesDetailsPageProps> = (props) => {
+  React.useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   return (
     <>
       <TopNavigation pageTitle="Activity Details" />

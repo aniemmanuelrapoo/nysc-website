@@ -8,6 +8,9 @@ interface ITermsAndConPageProps {
 }
 
 const TermsAndConPage: React.FunctionComponent<ITermsAndConPageProps> = (props) => {
+  React.useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   return (
     <>
       <TopNavigation pageTitle="Terms And Condition" />

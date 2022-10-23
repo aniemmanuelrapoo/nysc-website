@@ -8,6 +8,9 @@ interface IPrivacyPolicyPageProps {
 }
 
 const PrivacyPolicyPage: React.FunctionComponent<IPrivacyPolicyPageProps> = (props) => {
+  React.useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   return(
     <>
       <TopNavigation pageTitle="Privacy And Policy" />
