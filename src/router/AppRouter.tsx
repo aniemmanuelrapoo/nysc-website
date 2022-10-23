@@ -6,6 +6,7 @@ import ActivitiesPage from '../pages/ActivitiesPage';
 import AllCoursesPage from '../pages/AllCoursesPage';
 import AllServicePage from '../pages/AllServicePage';
 import ContactPage from '../pages/ContactPage';
+import CourseDetailsPage from '../pages/CourseDetailsPage';
 import HomePage from '../pages/HomePage';
 import NyscPolicyPage from '../pages/NyscPolicyPage';
 import PrivacyPolicyPage from '../pages/PrivacyPolicyPage';
@@ -24,6 +25,7 @@ const AppRouter: React.FunctionComponent<IAppRouterProps> = (props) => {
         <Route path="about" element={<AboutPage />}/>
         <Route path="services" element={<AllServicePage />}/>
         <Route path="lectures" element={<AllCoursesPage />}/>
+        <Route path="lecturesdetails" element={<CourseDetailsPage />}/>
         <Route path="activities" element={<ActivitiesPage />}/>
         <Route path="activitiesdetails" element={<ActivitiesDetailsPage />}/>
         <Route path="contact" element={<ContactPage />}/>

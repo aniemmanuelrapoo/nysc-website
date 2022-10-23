@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 interface IAllCoursesProps {
 }
@@ -19,7 +20,7 @@ const AllCourses: React.FunctionComponent<IAllCoursesProps> = (props) => {
               <Col lg={6} md={6} sm={12} className='p-2'>
                 <h5 className='service__name text-start course__name'>NYSC Rules And Regulation</h5>
                 <p className='service__discription course__des'>All You Should Know About NYSC And How Not To Get Into Trouble During Your Service Yearr</p>
-                <a href="/home" rel='noreferrer noopener' className='float-start course__viewMore'>View Details</a>
+                <Link to="/lecturesdetails" className='float-start course__viewMore'>View Lecture</Link>
               </Col>
 
               <Col lg={6} md={6} sm={12} className='p-2'>
@@ -28,7 +29,7 @@ const AllCourses: React.FunctionComponent<IAllCoursesProps> = (props) => {
               <Col lg={6} md={6} sm={12} className='p-2'>
                 <h5 className='service__name text-start course__name'>NYSC Rules</h5>
                 <p className='service__discription course__des'>All You Should Know About NYSC And How Not To Get Into Trouble During Your Service Yearr</p>
-                <a href="/home" rel='noreferrer noopener' className='float-start course__viewMore'>View Details</a>
+                <Link to="/lecturesdetails" className='float-start course__viewMore'>View Lecture</Link>
               </Col>
 
               <Col lg={6} md={6} sm={12} className='p-2'>
@@ -37,7 +38,7 @@ const AllCourses: React.FunctionComponent<IAllCoursesProps> = (props) => {
               <Col lg={6} md={6} sm={12} className='p-2'>
                 <h5 className='service__name text-start course__name'>NYSC Rules</h5>
                 <p className='service__discription course__des'>All You Should Know About NYSC And How Not To Get Into Trouble During Your Service Yearr</p>
-                <a href="/home" rel='noreferrer noopener' className='float-start course__viewMore'>View Details</a>
+                <Link to="/lecturesdetails" className='float-start course__viewMore'>View Lecture</Link>
               </Col>
             </Row>
           </Col>
@@ -49,7 +50,7 @@ const AllCourses: React.FunctionComponent<IAllCoursesProps> = (props) => {
               <Col lg={6} md={6} sm={12}>
                 <h5 className='service__name text-start course__name'>NYSC Rules</h5>
                 <p className='service__discription course__des'>All You Should Know About NYSC And How Not To Get Into Trouble During Your Service Yearr</p>
-                <a href="/home" rel='noreferrer noopener' className='float-start course__viewMore'>View Details</a>
+                <Link to="/lecturesdetails" className='float-start course__viewMore'>View Lecture</Link>
               </Col>
 
               <Col lg={6} md={6} sm={12} className='p-2'>
@@ -58,7 +59,7 @@ const AllCourses: React.FunctionComponent<IAllCoursesProps> = (props) => {
               <Col lg={6} md={6} sm={12} className='p-2'>
                 <h5 className='service__name text-start course__name'>NYSC Rules</h5>
                 <p className='service__discription course__des'>All You Should Know About NYSC And How Not To Get Into Trouble During Your Service Yearr</p>
-                <a href="/home" rel='noreferrer noopener' className='float-start course__viewMore'>View Details</a>
+                <Link to="/lecturesdetails" className='float-start course__viewMore'>View Lecture</Link>
               </Col>
 
               <Col lg={6} md={6} sm={12} className='p-2'>
@@ -67,7 +68,7 @@ const AllCourses: React.FunctionComponent<IAllCoursesProps> = (props) => {
               <Col lg={6} md={6} sm={12} className='p-2'>
                 <h5 className='service__name text-start course__name'>NYSC Rules</h5>
                 <p className='service__discription course__des'>All You Should Know About NYSC And How Not To Get Into Trouble During Your Service Yearr</p>
-                <a href="/home" rel='noreferrer noopener' className='float-start course__viewMore'>View Details</a>
+                <Link to="/lecturesdetails" className='float-start course__viewMore'>View Lecture</Link>
               </Col>
             </Row>
           </Col>

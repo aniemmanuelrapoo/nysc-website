@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 .App{
   background-color: #ff9216;
   color: #fff;
