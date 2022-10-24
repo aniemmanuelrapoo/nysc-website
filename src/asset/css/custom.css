@@ -738,4 +738,12 @@
   .activity__card{
     width: 100%;
   }
+
+  .nav__ServiconLogo{
+    width: 40%;
+  }
+  
+  .nav__NyscLogo{
+    width: 35%;
+  }
 }
