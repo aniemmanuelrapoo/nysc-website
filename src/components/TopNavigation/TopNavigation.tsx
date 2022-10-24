@@ -35,7 +35,7 @@ const TopNavigation: React.FunctionComponent<ITopNavigationProps> = ({ pageTitle
       <Navbar collapseOnSelect fixed="top" expand="lg" className={navBackground}>
       <Container>
     
-        <Navbar.Brand className={`${navBarTitle} nav__sideOne`}><NavLink to="/" className={`${navBarTitle} nav__sideOne`}> {navBarTitle === 'nav__titleScroll' ? <img src={ServiconLogo} alt='' width='20%' /> : <img src={NyscLogo} alt='' width='15%' />} NYSC CAMP ACTIVITIES</NavLink></Navbar.Brand>
+        <Navbar.Brand className={`${navBarTitle} nav__sideOne`}><NavLink to="/" className={`${navBarTitle} nav__sideOne nav__sideLink`}> {navBarTitle === 'nav__titleScroll' ? <img src={ServiconLogo} alt='' width='20%' /> : <img src={NyscLogo} alt='' width='15%' />} NYSC CAMP ACTIVITIES</NavLink></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className='nav__toggle' />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

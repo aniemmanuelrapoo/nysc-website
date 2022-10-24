@@ -175,6 +175,10 @@
   width: 20%;
 }
 
+.nav__sideLink{
+  width: 100%;
+}
+
 .nav__sideTwo{
   width: 80%;
   justify-content: right;
@@ -183,6 +187,14 @@
 .nav__toggle{
   background-color: var(--col-white-1) !important;
   color: var(--col-white-1) !important;
+}
+
+.nav__ServiconLogo{
+  width: 20%;
+}
+
+.nav__NyscLogo{
+  width: 15%;
 }
 
 /* Summary Section */
