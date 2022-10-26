@@ -1,3 +1,4 @@
+// import axios from 'axios';
 import * as React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
@@ -5,6 +6,25 @@ interface ITopBannerProps {
 }
 
 const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
+  // const [result, setResult] = React.useState()
+  // React.useEffect(() => {
+  //   let ignore = false;
+  //   axios.get('http://127.0.0.1:8000/api/homepage/title')
+  //     .then(function (response) {
+  //       if (!ignore){ 
+  //         setResult(response.data)
+  //         console.log(response.data);
+  //       }
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     })
+  
+  //   return () => {
+  //     ignore = true
+  //   }
+  // }, [])
+  
   return (
     <>
       <Container className='top__fixedBanner p-0' fluid>

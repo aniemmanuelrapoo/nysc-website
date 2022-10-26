@@ -25,6 +25,11 @@ const ProfileSec: React.FunctionComponent<IProfileSecProps> = (props) => {
               </Form.Group>
 
               <Form.Group className="mb-3">
+                <Form.Label>Your Phone Number</Form.Label>
+                <Form.Control type="text" placeholder="Enter Your Phone Number" />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
                 <Form.Label>Your State Code</Form.Label>
                 <Form.Control type="email" placeholder="Enter Your State Code" />
               </Form.Group>
