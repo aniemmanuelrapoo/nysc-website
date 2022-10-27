@@ -53,7 +53,7 @@ const Services: React.FunctionComponent<IServicesProps> = (props) => {
         <Row>
           {loading ? ('loading') : error ? (error) : (
             posts.map((post) => (
-              <Col lg={4} md={6} sm={12}>
+              <Col lg={4} md={6} sm={12} key={post.id}>
                 <div className='service__card'>
                   <img className='service__img1' src={post.service_logo} alt="" />
                   <h2 className='service__name'>{post.service_name}</h2>

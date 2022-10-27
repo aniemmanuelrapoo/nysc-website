@@ -24,11 +24,13 @@ export function GetRequest(getUrl: string){
         setLoading(false);
       })
       .catch(ex => {
-        const error =
-        ex.response.status === 404
-          ? "Resource Not found"
-          : "An unexpected error has occurred";
-        setError(error);
+        const err =
+        ex.code === "ECONNABORTED"
+          ? "A timeout has occurred"
+          : ex.response.status === 404
+            ? "Resource not found"
+            : '';
+        setError(err);
         setLoading(false);
       });
 }

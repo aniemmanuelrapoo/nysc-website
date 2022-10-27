@@ -16,8 +16,8 @@ const defaultPosts:IPost[] = [];
 
 const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
   const [posts, setPosts]: [IPost[], (posts: IPost[]) => void] = React.useState(defaultPosts);
-  const [title, setTitle]: [string, (title: string) => void] = React.useState(".....");
-  const [subtitle, setSubtitle]: [string, (subtitle: string) => void] = React.useState("......");
+  const [loading, setLoading]: [boolean, (loading: boolean) => void] = React.useState<boolean>(true);
+  const [error, setError]: [string, (error: string) => void] = React.useState("");
 
   React.useEffect(() => {
       axios
@@ -28,14 +28,17 @@ const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
         })
       .then(response => {
         setPosts(response.data);
-        setTitle(posts[0]['home_title'])
-        setSubtitle(posts[0]['home_subtitle'])
+        setLoading(false);
       })
-      .catch(err => {
-        if(err.response.status === 404){
-          setTitle('???')
-          setSubtitle('????')
-        }
+      .catch(ex => {
+        const err =
+        ex.code === "ECONNABORTED"
+          ? "A timeout has occurred"
+          : ex.response.status === 404
+            ? "Resource not found"
+            : '';
+        setError(err);
+        setLoading(false);
       });
     }, [posts]);
   
@@ -44,13 +47,17 @@ const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
       <Container className='top__fixedBanner p-0' fluid>
         <div className="top__bannerOverlay">
           <Container className='top__content'>
-            <Row>
-              <Col className='text-center'>
-                <h1 className='top__title'>{title}</h1>
-                <h4 className='top__subTitle'>{subtitle}</h4>
-                <Button variant="primary"><Link to='/activities' className="activities__link">All Activites</Link></Button>
-              </Col>
-            </Row>
+              <Row>
+                {loading ? ('loading') : error ? (error) : (
+                  posts.map((post, index) => (
+                    <Col className='text-center' key={index}>
+                      <h1 className='top__title'>{post.home_title}</h1>
+                      <h4 className='top__subTitle'>{post.home_subtitle}</h4>
+                      <Button variant="primary"><Link to='/activities' className="activities__link">All Activity</Link></Button>
+                    </Col>
+                    ))
+                  )}
+              </Row>
           </Container>
         </div>
       </Container>
