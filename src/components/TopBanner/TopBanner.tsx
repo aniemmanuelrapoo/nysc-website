@@ -25,6 +25,7 @@ const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
           },
+          timeout : 60000
         })
       .then(response => {
         setPosts(response.data);

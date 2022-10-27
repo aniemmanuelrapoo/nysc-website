@@ -28,7 +28,7 @@ const Services: React.FunctionComponent<IServicesProps> = (props) => {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
           },
-          timeout : 10000
+          timeout : 60000
         })
       .then(response => {
         setPosts(response.data);
