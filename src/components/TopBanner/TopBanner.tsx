@@ -50,7 +50,7 @@ const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
               <Col className='text-center'>
                 <h1 className='top__title'>{title}</h1>
                 <h4 className='top__subTitle'>{subtitle}</h4>
-                <Button variant="primary"><Link to='/activitiesdetails' className="activities__link">All Activites</Link></Button>
+                <Button variant="primary"><Link to='/activities' className="activities__link">All Activites</Link></Button>
               </Col>
             </Row>
           </Container>
