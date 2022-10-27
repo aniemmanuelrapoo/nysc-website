@@ -1,8 +1,8 @@
 import axios from 'axios';
 import * as React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { HomeTopTitle } from '../../RestApi/AppUrl';
-import { GetRequest } from '../../RestApi/RestClient';
 
 interface ITopBannerProps {
 }
@@ -50,7 +50,7 @@ const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
               <Col className='text-center'>
                 <h1 className='top__title'>{title}</h1>
                 <h4 className='top__subTitle'>{subtitle}</h4>
-                <Button variant="primary">Explore All</Button>
+                <Button variant="primary"><Link to='/activitiesdetails' className="activities__link">All Activites</Link></Button>
               </Col>
             </Row>
           </Container>

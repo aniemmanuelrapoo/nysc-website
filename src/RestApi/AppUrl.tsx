@@ -9,7 +9,7 @@
   export const ActivityDetails = BaseURL+'/activitydetails/';
   export const ActivityAll = BaseURL+'/activityall';
   export const ActivityHome = BaseURL+'/activityhome';
-  export const Services = BaseURL+'/services';
+  export const MyServices = BaseURL+'/services';
 
   export const Information = BaseURL+'/information';
   export const FooterData = BaseURL+'/footerdata';
