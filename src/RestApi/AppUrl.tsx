@@ -1,5 +1,5 @@
-  let BaseURL = 'http://127.0.0.1:8000/api';
-  // let BaseURL = 'https://rapi.fgclbd.com/api';
+  // let BaseURL = 'http://127.0.0.1:8000/api';
+  let BaseURL = 'https://camp-activity.nysctarabacs.com/api';
 
   export const HomeTopTitle = BaseURL+'/homepage/title';
   export const HomePopularDesc = BaseURL+'/popularhome';

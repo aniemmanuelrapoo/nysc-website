@@ -1,29 +1,45 @@
-// import axios from 'axios';
+import axios from 'axios';
 import * as React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import { HomeTopTitle } from '../../RestApi/AppUrl';
+import { GetRequest } from '../../RestApi/RestClient';
 
 interface ITopBannerProps {
 }
 
+interface IPost {
+  home_title: string
+  home_subtitle: string
+}
+
+const defaultPosts:IPost[] = [];
+
 const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
-  // const [result, setResult] = React.useState()
-  // React.useEffect(() => {
-  //   let ignore = false;
-  //   axios.get('http://127.0.0.1:8000/api/homepage/title')
-  //     .then(function (response) {
-  //       if (!ignore){ 
-  //         setResult(response.data)
-  //         console.log(response.data);
-  //       }
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     })
-  
-  //   return () => {
-  //     ignore = true
-  //   }
-  // }, [])
+  const [posts, setPosts]: [IPost[], (posts: IPost[]) => void] = React.useState(defaultPosts);
+  const [title, setTitle]: [string, (title: string) => void] = React.useState(".....");
+  const [subtitle, setSubtitle]: [string, (subtitle: string) => void] = React.useState("......");
+
+  React.useEffect(() => {
+    (async () => {
+      await axios
+      .get<IPost[]>(`${HomeTopTitle}`, {
+          headers: {
+            "Content-Type": "application/json"
+          },
+        })
+      .then(response => {
+        setPosts(response.data);
+        setTitle(posts[0]['home_title'])
+        setSubtitle(posts[0]['home_subtitle'])
+      })
+      .catch(err => {
+        if(err.response.status === 404){
+          setTitle('???')
+          setSubtitle('????')
+        }
+      });
+    })();
+    }, [posts]);
   
   return (
     <>
@@ -32,8 +48,8 @@ const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
           <Container className='top__content'>
             <Row>
               <Col className='text-center'>
-                <h1 className='top__title'>NYSC IN CAMP ACTIVITES</h1>
-                <h4 className='top__subTitle'>All Update On Camp Activites</h4>
+                <h1 className='top__title'>{title}</h1>
+                <h4 className='top__subTitle'>{subtitle}</h4>
                 <Button variant="primary">Explore All</Button>
               </Col>
             </Row>
