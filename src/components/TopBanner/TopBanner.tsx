@@ -20,11 +20,10 @@ const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
   const [subtitle, setSubtitle]: [string, (subtitle: string) => void] = React.useState("......");
 
   React.useEffect(() => {
-    (async () => {
-      await axios
+      axios
       .get<IPost[]>(`${HomeTopTitle}`, {
           headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
         })
       .then(response => {
@@ -38,7 +37,6 @@ const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
           setSubtitle('????')
         }
       });
-    })();
     }, [posts]);
   
   return (
