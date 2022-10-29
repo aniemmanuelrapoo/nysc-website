@@ -3,25 +3,65 @@ import * as React from 'react';
 import { Col, Container, Row, Modal, Button  } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo} from '@fortawesome/free-solid-svg-icons';
-const nyscVideo =  require("../../asset/image/anthem.mp4")
+import { HomeVideo } from '../../RestApi/AppUrl';
+import axios from 'axios';
+import parse from 'html-react-parser';
 
-const videoJsOptions = {
-  sources: [
-    {
-      src: nyscVideo,
-      type: "video/mp4"
-    }
-  ]
-};
+// const nyscVideo =  require("../../asset/image/anthem.mp4")
 
 interface IVideosProps {
 }
 
+interface IPost {
+  video_description: string
+  video_url: string
+}
+
+const defaultPosts:IPost[] = [];
+
 const Videos: React.FunctionComponent<IVideosProps> = (props) => {
   const [show, setShow] = React.useState(false);
+  const [posts, setPosts]: [IPost[], (posts: IPost[]) => void] = React.useState(defaultPosts);
+  const [loading, setLoading]: [boolean, (loading: boolean) => void] = React.useState<boolean>(true);
+  const [error, setError]: [string, (error: string) => void] = React.useState("");
+  const [urlV, setUrlV]: [string, (urlV: string) => void] = React.useState("");
+
+  React.useEffect(() => {
+      axios
+      .get<IPost[]>(`${HomeVideo}`, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          timeout : 60000
+        })
+      .then(response => {
+        setPosts(response.data);
+        setUrlV(posts[0]['video_url'])
+        setLoading(false);
+      })
+      .catch(ex => {
+        const err =
+        ex.code === "ECONNABORTED"
+          ? "A timeout has occurred"
+          : ex.response.status === 404
+            ? "Resource not found"
+            : '';
+        setError(err);
+        setLoading(false);
+      });
+  }, [posts]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const videoJsOptions = {
+    sources: [
+      {
+        src: urlV,
+        type: "video/mp4"
+      }
+    ]
+  };
   return (
     <>
       <Container className='text-center'>
@@ -29,13 +69,7 @@ const Videos: React.FunctionComponent<IVideosProps> = (props) => {
         <div className="service__titleBottom"></div>
         <Row>
           <Col lg={6} md={6} sm={12} className='video__text'>
-            <p className='text-start service__discription'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit possimus assumenda aperiam incidunt alias quis natus quia mollitia aliquid. Nisi facere doloribus incidunt corporis! Reprehenderit <br /><br /><br />
-              
-              nihil perspiciatis ipsam veritatis itaque ut beatae velit, iste ex laboriosam quidem nobis repellendus blanditiis amet! Quas, illum? Tempore nostrum at eligendi commodi cum impedit a odio accusantium ipsam ea fugit distinctio praesentium temporibus obcaecati beatae, velit saepe. Porro tempora corporis rerum tenetur <br /><br /><br />
-              
-              fugiat ullam officiis laboriosam sint corrupti! Perspiciatis quis error id nihil. Delectus mollitia quae ut, fugit quasi, quaerat, soluta inventore perspiciatis adipisci magnam impedit sit iusto illo necessitatibus vel? Veritatis, architecto facilis.
-            </p>
+          {loading ? 'loading' : error ? error : parse(`${posts[0]['video_description']}`)}
           </Col>
           <Col lg={6} md={6} sm={12} className='video__card'>
             <FontAwesomeIcon icon={faVideo} className='summary__iconHead' onClick={handleShow} />
@@ -43,7 +77,9 @@ const Videos: React.FunctionComponent<IVideosProps> = (props) => {
         </Row>
         <Modal size='lg' show={show} onHide={handleClose}>
           <Modal.Body className='video__play'>
+          {loading ? 'loading' : error ? error :
             <VideoPlayer options={videoJsOptions} />
+          }
           </Modal.Body>
           <Modal.Footer className='video__play'>
             <Button variant="secondary" onClick={handleClose}>
