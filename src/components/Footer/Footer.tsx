@@ -6,11 +6,53 @@ import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
+import { FooterData } from '../../RestApi/AppUrl';
+import axios from 'axios';
 
 interface IFooterProps {
 }
 
+interface IPost {
+  id: number
+  address: string
+  email: string
+  phone: string
+  facebook: string
+  youtube: string
+  twitter: string
+  footer_credit: string
+}
+
+const defaultPosts:IPost[] = [];
+
 const Footer: React.FunctionComponent<IFooterProps> = (props) => {
+  const [posts, setPosts]: [IPost[], (posts: IPost[]) => void] = React.useState(defaultPosts);
+  const [loading, setLoading]: [boolean, (loading: boolean) => void] = React.useState<boolean>(true);
+  const [error, setError]: [string, (error: string) => void] = React.useState("");
+
+  React.useEffect(() => {
+      axios
+      .get<IPost[]>(`${FooterData}`, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          timeout : 60000
+        })
+      .then(response => {
+        setPosts(response.data);
+        setLoading(false);
+      })
+      .catch(ex => {
+        const err =
+        ex.code === "ECONNABORTED"
+          ? "A timeout has occurred"
+          : ex.response.status === 404
+            ? "Resource not found"
+            : '';
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
   return (
     <>
       <Container fluid className='footer__section'>
@@ -18,13 +60,13 @@ const Footer: React.FunctionComponent<IFooterProps> = (props) => {
           <Col lg={3} md={6} sm={12} className='text-center footer__col'>
             <h2 className='footer__name text-center'>Follow Us</h2>
             <div className='footer__socialContainer'>
-              <a href="https://web.facebook.com/officialnysc" rel='noreferrer noopener'>
+              <a href={loading ? 'loading' : error ? error : posts[0]['facebook']} rel='noreferrer noopener'>
               <FontAwesomeIcon icon={faFacebook} size="2x" className='footer__social facebook' />  
               </a>
-              <a href="https://www.youtube.com/channel/UCkcNL0AbD0RbPjuwofbIMNQ" rel='noreferrer noopener'>
+              <a href={loading ? 'loading' : error ? error : posts[0]['youtube']} rel='noreferrer noopener'>
               <FontAwesomeIcon icon={faYoutube} size="2x" className='footer__social youtube' />  
               </a>
-              <a href="https://wa.me/+2348036636819" rel='noreferrer noopener'>
+              <a href={loading ? 'loading' : error ? error : posts[0]['twitter']} rel='noreferrer noopener'>
               <FontAwesomeIcon icon={faWhatsapp} size="2x" className='footer__social whatsapp' />  
               </a>
             </div>
@@ -32,9 +74,9 @@ const Footer: React.FunctionComponent<IFooterProps> = (props) => {
           <Col lg={3} md={6} sm={12} className='text-start footer__col'>
             <h2 className='footer__name'>Address</h2>
             <p className="footer__AddressDes">
-              NYSC Orentation Camp Sibry Taraba State <br></br>
-              <FontAwesomeIcon icon={faEnvelope}  /> Email : Support@gmail.com<br></br>
-              <FontAwesomeIcon icon={faPhone}  /> Phone : +2348036636819<br></br>
+            {loading ? 'loading' : error ? error : posts[0]['address']}<br></br>
+              <FontAwesomeIcon icon={faEnvelope}  /> Email : {loading ? 'loading' : error ? error : posts[0]['email']}<br></br>
+              <FontAwesomeIcon icon={faPhone}  /> Phone : {loading ? 'loading' : error ? error : posts[0]['phone']}<br></br>
           </p>
           </Col>
           <Col lg={3} md={6} sm={12} className='text-start footer__col'>
@@ -53,7 +95,7 @@ const Footer: React.FunctionComponent<IFooterProps> = (props) => {
         </Row>
       </Container>
       <Container fluid className="text-center copyright__section">
-        <a className="copyright__link" href="https://aniemmanuelrapoo.netlify.app/">© Copyright 2022 by <a href="https://aniemmanuelrapoo.netlify.app/">Rapoo</a>, All Rights Reserved</a>
+        <a className="copyright__link" href="https://aniemmanuelrapoo.netlify.app/">{loading ? 'loading' : error ? error : posts[0]['footer_credit']}</a>
       </Container>
     </>
   );

@@ -1,10 +1,47 @@
 import * as React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Information } from '../../RestApi/AppUrl';
+import parse from 'html-react-parser';
+import axios from 'axios';
 
 interface IAboutDescriptionProps {
 }
 
+interface IPost {
+  id: number
+  about: string
+}
+
+const defaultPosts:IPost[] = [];
+
 const AboutDescription: React.FunctionComponent<IAboutDescriptionProps> = (props) => {
+  const [posts, setPosts]: [IPost[], (posts: IPost[]) => void] = React.useState(defaultPosts);
+  const [loading, setLoading]: [boolean, (loading: boolean) => void] = React.useState<boolean>(true);
+  const [error, setError]: [string, (error: string) => void] = React.useState("");
+
+  React.useEffect(() => {
+      axios
+      .get<IPost[]>(`${Information}`, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          timeout : 60000
+        })
+      .then(response => {
+        setPosts(response.data);
+        setLoading(false);
+      })
+      .catch(ex => {
+        const err =
+        ex.code === "ECONNABORTED"
+          ? "A timeout has occurred"
+          : ex.response.status === 404
+            ? "Resource not found"
+            : '';
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
   return(
     <>
       <Container className='mt-5'>
@@ -12,35 +49,7 @@ const AboutDescription: React.FunctionComponent<IAboutDescriptionProps> = (props
           <Col sm={12} lg={12} md={12}>
             <h1 className='service__name'>Who We Are</h1>
             <hr />
-            <p className='text-start service__discription'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit possimus assumenda aperiam incidunt alias quis natus quia mollitia aliquid. Nisi facere doloribus incidunt corporis! Reprehenderit <br /><br /><br />
-              
-              nihil perspiciatis ipsam veritatis itaque ut beatae velit, iste ex laboriosam quidem nobis repellendus blanditiis amet! Quas, illum? Tempore nostrum at eligendi commodi cum impedit a odio accusantium ipsam ea fugit distinctio praesentium temporibus obcaecati beatae, velit saepe. Porro tempora corporis rerum tenetur <br /><br /><br />
-              
-              fugiat ullam officiis laboriosam sint corrupti! Perspiciatis quis error id nihil. Delectus mollitia quae ut, fugit quasi, quaerat, soluta inventore perspiciatis adipisci magnam impedit sit iusto illo necessitatibus vel? Veritatis, architecto facilis.
-            </p>
-
-            <br /><br /><br /><br />
-            <h1 className='service__name'>Our Mission</h1>
-            <hr />
-            <p className='text-start service__discription'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit possimus assumenda aperiam incidunt alias quis natus quia mollitia aliquid. Nisi facere doloribus incidunt corporis! Reprehenderit <br /><br /><br />
-              
-              nihil perspiciatis ipsam veritatis itaque ut beatae velit, iste ex laboriosam quidem nobis repellendus blanditiis amet! Quas, illum? Tempore nostrum at eligendi commodi cum impedit a odio accusantium ipsam ea fugit distinctio praesentium temporibus obcaecati beatae, velit saepe. Porro tempora corporis rerum tenetur <br /><br /><br />
-              
-              fugiat ullam officiis laboriosam sint corrupti! Perspiciatis quis error id nihil. Delectus mollitia quae ut, fugit quasi, quaerat, soluta inventore perspiciatis adipisci magnam impedit sit iusto illo necessitatibus vel? Veritatis, architecto facilis.
-            </p>
-
-            <br /><br /><br /><br />
-            <h1 className='service__name'>Our Vision</h1>
-            <hr />
-            <p className='text-start service__discription'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit possimus assumenda aperiam incidunt alias quis natus quia mollitia aliquid. Nisi facere doloribus incidunt corporis! Reprehenderit <br /><br /><br />
-              
-              nihil perspiciatis ipsam veritatis itaque ut beatae velit, iste ex laboriosam quidem nobis repellendus blanditiis amet! Quas, illum? Tempore nostrum at eligendi commodi cum impedit a odio accusantium ipsam ea fugit distinctio praesentium temporibus obcaecati beatae, velit saepe. Porro tempora corporis rerum tenetur <br /><br /><br />
-              
-              fugiat ullam officiis laboriosam sint corrupti! Perspiciatis quis error id nihil. Delectus mollitia quae ut, fugit quasi, quaerat, soluta inventore perspiciatis adipisci magnam impedit sit iusto illo necessitatibus vel? Veritatis, architecto facilis.
-            </p>
+            {loading ? 'loading' : error ? error : parse(`${posts[0]['about']}`)}
           </Col>
         </Row>
       </Container>
