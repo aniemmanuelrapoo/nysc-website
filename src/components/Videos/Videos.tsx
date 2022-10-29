@@ -1,4 +1,3 @@
-import VideoPlayer from './VideoFmt'
 import * as React from 'react';
 import { Col, Container, Row, Modal, Button  } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,7 +23,6 @@ const Videos: React.FunctionComponent<IVideosProps> = (props) => {
   const [posts, setPosts]: [IPost[], (posts: IPost[]) => void] = React.useState(defaultPosts);
   const [loading, setLoading]: [boolean, (loading: boolean) => void] = React.useState<boolean>(true);
   const [error, setError]: [string, (error: string) => void] = React.useState("");
-  const [urlV, setUrlV]: [string, (urlV: string) => void] = React.useState("");
 
   React.useEffect(() => {
       axios
@@ -36,7 +34,6 @@ const Videos: React.FunctionComponent<IVideosProps> = (props) => {
         })
       .then(response => {
         setPosts(response.data);
-        setUrlV(posts[0]['video_url'])
         setLoading(false);
       })
       .catch(ex => {
@@ -49,19 +46,10 @@ const Videos: React.FunctionComponent<IVideosProps> = (props) => {
         setError(err);
         setLoading(false);
       });
-  }, [posts]);
+  }, []);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const videoJsOptions = {
-    sources: [
-      {
-        src: urlV,
-        type: "video/mp4"
-      }
-    ]
-  };
   return (
     <>
       <Container className='text-center'>
@@ -78,7 +66,9 @@ const Videos: React.FunctionComponent<IVideosProps> = (props) => {
         <Modal size='lg' show={show} onHide={handleClose}>
           <Modal.Body className='video__play'>
           {loading ? 'loading' : error ? error :
-            <VideoPlayer options={videoJsOptions} />
+            <iframe width="100%" height="315"
+            src={posts[0]['video_url']} title="NYSC Anthem">
+            </iframe>
           }
           </Modal.Body>
           <Modal.Footer className='video__play'>

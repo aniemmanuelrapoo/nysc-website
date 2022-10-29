@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as React from 'react';
+import "@capaj/videojs-youtube";
 
 
 interface IPost {
