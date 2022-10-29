@@ -36,12 +36,13 @@ const TopBanner: React.FunctionComponent<ITopBannerProps> = (props) => {
         ex.code === "ECONNABORTED"
           ? "A timeout has occurred"
           : ex.response.status === 404
+          
             ? "Resource not found"
             : '';
         setError(err);
         setLoading(false);
       });
-    }, [posts]);
+    }, []);
   
   return (
     <>

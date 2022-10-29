@@ -1,56 +1,74 @@
+import axios from 'axios';
 import * as React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { ActivityHome } from '../../RestApi/AppUrl';
 
 interface IRecentActivitiesProps {
 }
 
+interface IPost {
+  id: number
+  image_one: string
+  image_two: string
+  activity_name: string
+  activity_description:string
+  activity_features:string
+  live_preview:string
+}
+
+const defaultPosts:IPost[] = [];
+
 const RecentActivities: React.FunctionComponent<IRecentActivitiesProps> = (props) => {
+  const [posts, setPosts]: [IPost[], (posts: IPost[]) => void] = React.useState(defaultPosts);
+  const [loading, setLoading]: [boolean, (loading: boolean) => void] = React.useState<boolean>(true);
+  const [error, setError]: [string, (error: string) => void] = React.useState("");
+
+  React.useEffect(() => {
+      axios
+      .get<IPost[]>(`${ActivityHome}`, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          timeout : 60000
+        })
+      .then(response => {
+        setPosts(response.data);
+        setLoading(false);
+      })
+      .catch(ex => {
+        const err =
+        ex.code === "ECONNABORTED"
+          ? "A timeout has occurred"
+          : ex.response.status === 404
+            ? "Resource not found"
+            : '';
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
   return(
     <>
       <Container className='text-center'>
         <h1 className='service__title'>RECENT ACTIVITIES</h1>
         <div className="service__titleBottom"></div>
         <Row className='text-dark'>
+        {loading ? ('loading') : error ? (error) : (
+          posts.map((post) => (
           <Col lg={4} md={6} sm={12}>
             <Card className='activity__card'>
-              <Card.Img variant="top" src="https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?w=740&t=st=1666230708~exp=1666231308~hmac=23ff5dc5321b7ab8c9e7582d900b657c7a7bd8a4a9b7a3e10bde584ee3f0ee21" />
+              <Card.Img variant="top" src={post.image_one} className='activity__img1' />
               <Card.Body>
-                <Card.Title className='service__name'>Activity One</Card.Title>
+                <Card.Title className='service__name'>{post.activity_name}</Card.Title>
                 <Card.Text className='service__discription'>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                {post.activity_description}
                 </Card.Text>
                 <Button variant="primary"><Link to='/activitiesdetails' className="activities__link">View Activity</Link></Button>
               </Card.Body>
             </Card>
           </Col>
-          <Col lg={4} md={6} sm={12}>
-            <Card className='activity__card'>
-              <Card.Img variant="top" src="https://img.freepik.com/premium-photo/beautiful-young-african-woman-reading-book-library_219728-4340.jpg?w=740" />
-              <Card.Body>
-                <Card.Title className='service__name'>Activity Two</Card.Title>
-                <Card.Text className='service__discription'>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary"><Link to='/activitiesdetails' className="activities__link">View Activity</Link></Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col lg={4} md={6} sm={12}>
-            <Card className='activity__card'>
-              <Card.Img variant="top" src="https://img.freepik.com/free-photo/positive-college-student-has-dark-skin-carries-folders-book-points-with-cheerful-expression-aside-has-toothy-smile_273609-23704.jpg?w=740&t=st=1666230929~exp=1666231529~hmac=a117985d6e3473d1cdd532b2b58a705eb27a1a4cf56f172eccb9e1f5b62165f5" />
-              <Card.Body>
-                <Card.Title className='service__name'>Activity Three</Card.Title>
-                <Card.Text className='service__discription'>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary"><Link to='/activitiesdetails' className="activities__link">View Activity</Link></Button>
-              </Card.Body>
-            </Card>
-          </Col>
+          ))
+          )}
         </Row>
       </Container>
     </>

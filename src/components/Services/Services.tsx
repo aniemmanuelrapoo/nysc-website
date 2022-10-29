@@ -44,7 +44,7 @@ const Services: React.FunctionComponent<IServicesProps> = (props) => {
         setError(err);
         setLoading(false);
       });
-  }, [posts]);
+  }, []);
   return(
     <>
       <Container className='text-center'>
